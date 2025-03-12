@@ -16,6 +16,23 @@ document.addEventListener("DOMContentLoaded", function () {
       const finishingOptions = document.getElementById("finishing-options").value;
       const inkOptions = document.getElementById("ink-options").value;
       const numberOfSides = document.getElementById("number-of-sides").value;
+      
+      // Check for missing fields (excluding material size)
+      const missingFields = [];
+      if (!printingType) missingFields.push("Printing Type");
+      if (!materialType) missingFields.push("Material Type");
+      if (!gsm) missingFields.push("GSM");
+      if (!quantity) missingFields.push("Quantity");
+      if (!colorOptions) missingFields.push("Color Options");
+      if (!finishingOptions) missingFields.push("Finishing Options");
+      if (!inkOptions) missingFields.push("Ink Options");
+      if (!numberOfSides) missingFields.push("Number of Sides");
+      
+      if (missingFields.length > 0) {
+          costValue.textContent = `Missing field: ${missingFields.join(", ")}`;
+          costDisplay.classList.remove("hidden");
+          return;
+      }
 
       // Impossible process conditions
       if ((printingType === "flexo" && (materialType === "paper" || materialType === "paperboard")) ||
