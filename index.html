@@ -1,0 +1,177 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrintEstimate - Printing Cost Estimator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div >
+        <img src="./logo.jpg" alt="PrintEstimate Logo" class="logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="AboutUs.html">About Us</a></li>
+          <li><a href="#estimator">Estimator</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p><b><font size="100" color=Black>Welcome to PrintEstimate</font></b></p>
+        <a href="#estimator" class="btn-primary">Get Started</a>
+      </div>
+    </section>  
+
+    <!-- Estimator Section -->
+  <section class="estimator" id="estimator">
+    <div class="container">
+      <h2>Printing Cost Estimator</h2>
+      <form id="printing-form">
+        <!-- Printing Type -->
+        <div class="form-group">
+          <label for="printing-type">Select Printing Type:</label>
+          <select id="printing-type" name="printingType">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="flexo">Flexo</option>
+            <option value="gravure">Gravure</option>
+            <option value="digital">Digital</option>
+            <option value="offset">Offset</option>
+          </select>
+        </div>
+
+        <!-- GSM -->
+        <div class="form-group">
+          <label for="gsm">Enter Paper GSM / Thickness:</label>
+          <input type="number" id="gsm" name="gsm" placeholder="Enter GSM" min="1">
+        </div>
+
+        <!-- Material Type -->
+        <div class="form-group">
+          <label for="material-type">Select Material Type:</label>
+          <select id="material-type" name="materialType">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="paper">Paper</option>
+            <option value="paperboard">Paperboard</option>
+            <option value="foil">Foil</option>
+            <option value="film">Film</option>
+          </select>
+        </div>
+        <!-- Material Size -->
+<div class="form-group">
+  <label for="material-size">Select Material Size:</label>
+  <select id="material-size" name="materialSize" onchange="toggleCustomInput()">
+    <option value="" disabled selected>Choose an option</option>
+    <option value="a3">A3</option>
+    <option value="a4">A4</option>
+    <option value="custom">Custom (Enter below)</option>
+  </select>
+
+  <!-- Custom Input Field (Initially Disabled) -->
+  <input type="text" id="custom-size" name="customSize" placeholder="Enter custom size (in m²)" style="display: none; margin-top: 10px;">
+</div>
+
+<script>
+  function toggleCustomInput() {
+    var select = document.getElementById("material-size");
+    var customInput = document.getElementById("custom-size");
+
+    if (select.value === "custom") {
+      customInput.style.display = "inline-block";  // Show input field
+      customInput.setAttribute("name", "materialSize"); // Ensure it's submitted
+      customInput.focus(); // Auto-focus on input
+    } else {
+      customInput.style.display = "none";   // Hide input field
+      customInput.removeAttribute("name");  // Prevent submission when hidden
+      customInput.value = ""; // Clear input when switching back
+    }
+  }
+</script>
+
+
+        <!-- Quantity -->
+        <div class="form-group">
+          <label for="quantity">Enter Quantity:</label>
+          <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" min="1">
+        </div>
+
+        <!-- Color Options -->
+        <div class="form-group">
+          <label for="color-options">Select Color Options:</label>
+          <select id="color-options" name="colorOptions">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="single-color">Single Color</option>
+            <option value="multi-color">Multicolor</option>
+          </select>
+        </div>
+
+        <!-- Finishing Options -->
+        <div class="form-group">
+          <label for="finishing-options">Select Finishing Options:</label>
+          <select id="finishing-options" name="finishingOptions">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="lamination">Lamination</option>
+            <option value="binding">Binding</option>
+            <option value="cutting">Cutting</option>
+            <option value="creasing">Creasing</option>
+            <option value="uncoated">None</option>
+          </select>
+        </div>
+
+        <!-- Ink Options -->
+        <div class="form-group">
+          <label for="ink-options">Select Ink Options:</label>
+          <select id="ink-options" name="inkOptions">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="solvent-based">Solvent-Based</option>
+            <option value="water-based">Water-Based</option>
+            <option value="paste-ink">Paste Ink</option>
+          </select>
+        </div>
+        <!-- Number of sides to be printed -->
+        <div class="form-group">
+          <label for="number-of-sides">Number of Sides:</label>
+          <select id="number-of-sides" name="numberofsides">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="One">One</option>
+            <option value="Two">Two</option>
+          </select>
+        </div>
+        <!-- Submit Button -->
+        <button type="submit" class="btn-primary">Estimate Cost</button>
+      </form>
+    </div>
+    <!-- Cost Display Box -->
+    <div id="cost-display" class="hidden">
+      <h3>Estimated Cost</h3>
+      <p id="cost-value">₹0</p>
+    </div>
+  </div>
+  </section>
+
+
+
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2>Contact Us</h2>
+      <p>Have questions or feedback? Reach out to us at:</p>
+      <p>Email: support@printestimate.com</p>
+      <p>Phone: +91 12345 67890</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 PrintEstimate. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>

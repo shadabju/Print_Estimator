@@ -1,0 +1,219 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00c8ff;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar{
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li {
+  display: inline;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #00bbff;
+}
+
+.logo{
+  height:50px;
+  width:50px;
+  border-radius:50%;
+}
+.hero {
+  background: url('./backgr.webp') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 300px 20px;
+}
+
+
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero .btn-primary {
+  background-color: #00b3ff;
+  color: #333;
+  padding: 10px 60px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.hero .btn-primary:hover {
+  background-color: #ffc107;
+}
+
+/* Estimator Section */
+.estimator {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.estimator h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.estimator .form-group {
+  margin-bottom: 20px;
+}
+
+.estimator label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.estimator select,
+.estimator input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.estimator select:focus,
+.estimator input:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.estimator .btn-primary {
+  display: block;
+  width: 100%;
+  background-color: #007BFF;
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.estimator .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.footer p {
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* About Section */
+.about, .contact {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.about h2, .contact h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about p, .contact p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
